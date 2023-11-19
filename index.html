@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Form Validation</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <!-- form -->
+        <form action="" id="form">
+            <!-- full name -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name">
+            </div>
+            <!-- Phone number -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+            </div>
+            <!-- email address -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email address">
+            </div>
+            <!-- Website url -->
+            <div class="form-group">
+                <label for="website">Website URL</label>
+                <input type="url" id="website" placeholder="Enter your website url">
+            </div>
+            <!-- password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <!-- Confirm password -->
+            <div class="form-group">
+                <label for="con_password">Confirm Password</label>
+                <input type="password" id="con_password" placeholder="Enter your password again">
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <!-- Error/success messenge -->
+        <div class="message-container">
+            <h3 id="messenge">No Message</h3>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
