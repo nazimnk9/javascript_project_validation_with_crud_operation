@@ -18,6 +18,8 @@ let conPasswordError = document.getElementById("con_password_err");
 let messageContainer = document.querySelector(".message-container");
 let message = document.getElementById("message");
 
+let userList = document.querySelector(".user-list ol");
+
 /* let isValid = false; */
 let passwordMatch = false;
 let isPassword = false;
@@ -121,11 +123,58 @@ function validateForm(){
         messageContainer.style.borderColor = "green";
     }
     if(name.value && phone.value && email.value && url.value && password.value && conPassword.value && emailMatch && isPassword && passwordMatch){
+        addUserToList();
         message.textContent = "Successfully Register!";
         message.style.color = "green";
         messageContainer.style.borderColor = "green";
 
     }
+}
+
+
+function addUserToList() {
+    let li = document.createElement("li");
+    li.classList.add("user-item");
+
+    // Create span elements for each form field
+    let nameSpan = document.createElement("span");
+    let phoneSpan = document.createElement("span");
+    let emailSpan = document.createElement("span");
+    let urlSpan = document.createElement("span");
+    let passwordSpan = document.createElement("span");
+
+    // Set the text content for each span
+    nameSpan.textContent = "Name: " + name.value;
+    phoneSpan.textContent = "Phone: " + phone.value;
+    emailSpan.textContent = "Email: " + email.value;
+    urlSpan.textContent = "URL: " + url.value;
+    passwordSpan.textContent = "Password: " + password.value;
+
+    
+    li.appendChild(nameSpan);
+    li.appendChild(phoneSpan);
+    li.appendChild(emailSpan);
+    li.appendChild(urlSpan);
+    li.appendChild(passwordSpan);
+
+    
+    let userActionsDiv = document.createElement("div");
+    userActionsDiv.classList.add("user-actions");
+
+    let editButton = document.createElement("button");
+    editButton.classList.add("edit-btn");
+    editButton.textContent = "Edit";
+
+    let deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-btn");
+    deleteButton.textContent = "Delete";
+
+    userActionsDiv.appendChild(editButton);
+    userActionsDiv.appendChild(deleteButton);
+
+    li.appendChild(userActionsDiv);
+
+    userList.appendChild(li);
 }
 
 function processFormData(e){
