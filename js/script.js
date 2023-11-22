@@ -18,8 +18,6 @@ let conPasswordError = document.getElementById("con_password_err");
 let messageContainer = document.querySelector(".message-container");
 let message = document.getElementById("message");
 
-let userList = document.querySelector(".user-list ol");
-
 /* let isValid = false; */
 let passwordMatch = false;
 let isPassword = false;
@@ -133,6 +131,7 @@ function validateForm(){
 
 
 function addUserToList() {
+    /* let userList = document.querySelector(".user-list ol");
     let li = document.createElement("li");
     li.classList.add("user-item");
 
@@ -174,7 +173,46 @@ function addUserToList() {
 
     li.appendChild(userActionsDiv);
 
-    userList.appendChild(li);
+    userList.appendChild(li); */
+
+    
+    let userObject = {
+        name: name.value,
+        phone: phone.value,
+        email: email.value,
+        url: url.value,
+        password: password.value
+    };
+    
+    let userListArr = [];
+    // console.log(userObject);
+    
+    userListArr.push(userObject);
+    // console.log(userListArr);
+    info(userListArr);
+    
+}
+function info(userListArr){
+    let userList = document.querySelector(".user-list ol");
+    // userList.innerHTML = "";
+    userListArr.map((item) =>{
+        // console.log(item);
+        // console.log(key);
+        userList.innerHTML += `<li class="user-item">
+        <span>Name: ${item.name}</span>
+        <span>Phone: ${item.phone}</span>
+        <span>Email: ${item.email}</span>
+        <span>URL: ${item.url}</span>
+        <span>Password: ${item.password}</span>
+        
+        <div class="user-actions">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </div>
+    </li>`;
+});
+// console.log(userListArr);
+    // console.log(userList);
 }
 
 function processFormData(e){
