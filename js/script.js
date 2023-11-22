@@ -195,6 +195,7 @@ function addUserToList() {
 function info(userListArr){
     let userList = document.querySelector(".user-list ol");
     // userList.innerHTML = "";
+    // userList.innerHTML = "";
     userListArr.map((item) =>{
         // console.log(item);
         // console.log(key);
@@ -210,9 +211,26 @@ function info(userListArr){
             <button class="delete-btn">Delete</button>
         </div>
     </li>`;
+
 });
+
 // console.log(userListArr);
-    // console.log(userList);
+
+let deleteBtns = document.querySelectorAll(".delete-btn");
+    console.log(deleteBtns);
+    let deleteBtnArr = Array.from(deleteBtns);
+
+    deleteBtnArr.map((deleteItem,index) =>{
+        // console.log(deleteItem);
+        // console.log(index);
+        console.log(userListArr);
+        deleteItem.addEventListener("click",function(){
+            console.log(index);
+            // userListArr.splice(index,1);
+            // console.log(userListArr);
+            // info(userListArr);
+        });
+    });
 }
 
 function processFormData(e){
