@@ -154,3 +154,7 @@ button:focus{
 .delete-btn {
     background-color: #e74c3c;
 }
+
+.toggle-password {
+    cursor: pointer;
+}
