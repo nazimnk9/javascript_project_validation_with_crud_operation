@@ -281,6 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         let cancelButton = document.createElement("button");
+        cancelButton.classList.add("cancel-btn");
         cancelButton.textContent = "Cancel";
         cancelButton.addEventListener("click", function () {
             let userActionsDiv = li.querySelector(".user-actions");
@@ -306,19 +307,6 @@ document.addEventListener("DOMContentLoaded", function () {
             li.replaceChild(emailInput, emailSpan);
             li.replaceChild(urlInput, urlSpan);
             li.replaceChild(passwordInput, passwordSpan);
-    }
-
-    function togglePassword(inputId) {
-        const passwordInput = document.getElementById(inputId);
-        const icon = passwordInput.nextElementSibling; // Assuming the icon is the next sibling
-    
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-            icon.textContent = "🙈"; // You can replace this emoji with your preferred show password icon
-        } else {
-            passwordInput.type = "password";
-            icon.textContent = "👁️"; // You can replace this emoji with your preferred hide password icon
-        }
     }
 
     function createInputField(type, value) {

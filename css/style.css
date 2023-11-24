@@ -142,7 +142,7 @@ button:focus{
     gap: 10px;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn, .delete-btn, .update-btn, .cancel-btn {
     background-color: #2ecc71;
     color: #fff;
     border: none;
@@ -151,10 +151,6 @@ button:focus{
     cursor: pointer;
 }
 
-.delete-btn {
+.delete-btn, .cancel-btn {
     background-color: #e74c3c;
-}
-
-.toggle-password {
-    cursor: pointer;
 }
