@@ -31,47 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function validateForm() {
-        /* resetErrors(); */
-
-        /* if (!name.value) {
-            showError(nameError, "Please enter your name");
-            return;
-        }
-
-        if (!phone.value) {
-            showError(phoneError, "Please enter your phone number");
-            return;
-        }
-
-        if (!email.value) {
-            showError(emailError, "Please enter your email");
-            return;
-        } else if (!email.value.match(emailValidateRegx)) {
-            showError(emailError, "Invalid email format");
-            return;
-        }
-
-        if (!url.value) {
-            showError(urlError, "Please enter your URL");
-            return;
-        }
-
-        if (!password.value) {
-            showError(passwordError, "Please enter your password");
-            return;
-        }
-
-        if (!conPassword.value) {
-            showError(conPasswordError, "Please enter password again");
-            return;
-        } else if (conPassword.value !== password.value) {
-            showError(conPasswordError, "Passwords do not match");
-            return;
-        }
-
-        addUserToList();
-        showMessage("Successfully registered!", "green"); */
-
         if(!name.value){
             nameError.textContent = "Please enter your name";
             nameError.style.color = "red";
@@ -156,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
         }
-        // isValid = form.checkValidity();
+
         if(!name.value || !phone.value || !email.value || !url.value || !password.value || !conPassword.value){
             message.textContent = "Please fill up the form!";
             message.style.color = "red";
@@ -175,31 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
         }
     }
-
-    /* function showError(element, message) {
-        element.textContent = message;
-        element.style.color = "red";
-        element.previousElementSibling.style.borderColor = "red";
-    } */
-
-    /* function resetErrors() {
-        let errors = document.querySelectorAll(".form-group p");
-        errors.forEach(function (error) {
-            error.textContent = "";
-        });
-
-        let inputs = document.querySelectorAll(".form-group input");
-        inputs.forEach(function (input) {
-            input.style.borderColor = "initial";
-        });
-    }
- */
-    /* function showMessage(msg, color) {
-        message.textContent = msg;
-        message.style.color = color;
-        messageContainer.style.borderColor = color;
-    } */
-
+    
     function addUserToList() {
         let li = document.createElement("li");
         li.classList.add("user-item");
